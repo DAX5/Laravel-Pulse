@@ -14,7 +14,7 @@ class MetricsController extends Controller
 {
     public function generateJob(): RedirectResponse
     {
-        dispatch(new standardJob);
+        dispatch(new standardJob());
 
         return Redirect::to('/dashboard');
     }
@@ -37,7 +37,7 @@ class MetricsController extends Controller
     {
         $user = Cache::get("user_{$request->user()->id}");
 
-        if (! $user) {
+        if (!$user) {
             $user = $request->user();
             Cache::set("user_{$user->id}", $user, 100);
         }
@@ -68,6 +68,6 @@ class MetricsController extends Controller
 
     public function makeException()
     {
-        return 1/0;
+        return 1 / 0;
     }
 }

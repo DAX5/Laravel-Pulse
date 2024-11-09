@@ -228,5 +228,9 @@ return [
                 '#^/telescope#', // Telescope dashboard...
             ],
         ],
+
+        \App\PulseRecorders\MostUpdatedUsersRecorder::class => [
+            //
+        ]
     ],
 ];
